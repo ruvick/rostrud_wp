@@ -26,7 +26,7 @@ get_header(); ?>
 <main class="main page">	
 
 <section class = "content">
-		<div class="container">
+		<div class="_container">
 
 			<div class="bread-crumbs-box">
 				<?php
@@ -145,7 +145,7 @@ get_header(); ?>
         </template>
 
         <section>   
-            <div class="container">
+            <div class="_container">
                 <div id = "bascet_vue">
 
                     <div class = "bascet_content" >
