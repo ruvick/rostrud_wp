@@ -36,18 +36,8 @@
 
       <div class="header__menu">
         <div class="header__menu-container _container">
-          <ul class="menu-list header__menu-list d-flex">
-            <li class="menu-list__item"><a href="#" class="menu-list__link">Главная</a></li>
-            <li class="menu-list__item"><a href="#" class="menu-list__link">О нас</a></li>
-            <li class="menu-list__item"><a href="#" class="menu-list__link">Акции</a></li>
-            <li class="menu-list__item"><a href="security.html" class="menu-list__link">Аккредитации и лицензии</a></li>
-            <li class="menu-list__item"><a href="#" class="menu-list__link">Наши клиенты и партнеры</a></li>
-            <li class="menu-list__item"><a href="services.html" class="menu-list__link">Услуги</a></li>
-            <li class="menu-list__item"><a href="#" class="menu-list__link">Отзывы</a></li>
-            <li class="menu-list__item"><a href="#" class="menu-list__link">Контакты</a></li>
-          </ul>
-      <!-- <?php wp_nav_menu( array('theme_location' => 'menu_main','menu_class' => 'menu__list',
-      'container_class' => 'menu__list','container' => false )); ?>  -->
+      <?php wp_nav_menu( array('theme_location' => 'menu_main','menu_class' => 'menu-list header__menu-list d-flex',
+      'container_class' => 'menu-list header__menu-list d-flex','container' => false )); ?> 
     </div>
   </div>
 
@@ -55,27 +45,17 @@
 
 <!-- Мобильное меню -->
 <div class="mob-menu header__mob-menu">
-  <ul class="mob-menu__list">
-    <li class="mob-menu__item"><a href="#" class="mob-menu__link">Главная</a></li>
-    <li class="mob-menu__item"><a href="#" class="mob-menu__link">О нас</a></li>
-    <li class="mob-menu__item"><a href="#" class="mob-menu__link">Акции</a></li>
-    <li class="mob-menu__item"><a href="security.html" class="mob-menu__link">Аккредитации и лицензии</a></li>
-    <li class="mob-menu__item"><a href="#" class="mob-menu__link">Наши клиенты и партнеры</a></li>
-    <li class="mob-menu__item"><a href="services.html" class="mob-menu__link">Услуги</a></li>
-    <li class="mob-menu__item"><a href="#" class="mob-menu__link">Отзывы</a></li>
-    <li class="mob-menu__item"><a href="#" class="mob-menu__link">Контакты</a></li>
-  </ul>
+    <?php wp_nav_menu( array('theme_location' => 'menu_main','menu_class' => 'mob-menu__list',
+  'container_class' => 'mob-menu__list','container' => false )); ?> 
 
   <div class="header__soc-block header__soc-block_mob">
     <div class="header__soc-block-icon soc-block-icon">
-      <a href="#" class="soc-block-icon__link soc-block-icon__link_1"></a>
-      <a href="#" class="soc-block-icon__link soc-block-icon__link_2"></a>
-      <a href="#" class="soc-block-icon__link soc-block-icon__link_3"></a>
-      <a href="#" class="soc-block-icon__link soc-block-icon__link_4"></a>
+      <a href="<?php echo carbon_get_theme_option('as_insta'); ?>" class="soc-block-icon__link soc-block-icon__link_1"></a>
+	    <a href="<?php echo carbon_get_theme_option('as_vk'); ?>" class="soc-block-icon__link soc-block-icon__link_2"></a>
+	    <a href="<?php echo carbon_get_theme_option('as_telegr'); ?>" class="soc-block-icon__link soc-block-icon__link_3"></a>
+	    <a href="<?php echo carbon_get_theme_option('as_whatsapp'); ?>" class="soc-block-icon__link soc-block-icon__link_4"></a>
     </div>
     <p class="header__soc-block-text">МЫ В СОЦСЕТЯХ</p>
   </div>
-  <!-- <?php wp_nav_menu( array('theme_location' => 'menu_main','menu_class' => 'mob-menu__list',
-  'container_class' => 'mob-menu__list','container' => false )); ?>  -->
   <a href="#callback" class="header__popup-link header__popup-link_mob btn _popup-link">ЗАКАЗАТЬ ЗВОНОК</a>
 </div> 
