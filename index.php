@@ -22,7 +22,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="slider-bg__swiper-button-block swiper-button-block">
+			<div class="slider-bg__swiper-button-block swiper-button-block"> 
 				<div class="_container">
 					<div class="swiper-button swiper-button-next slider-main-next"></div>
 					<div class="swiper-button swiper-button-prev slider-main-prev"></div>
