@@ -14,20 +14,13 @@ get_header(); ?>
       <section id="services" class="services page-recurring">
         <div class="_container">
 
-          <p id="breadcrumbs"> 
-            <span>
-              <span>
-                <a href="index.html">
-                  Главная
-                </a> /
-                <span class="breadcrumb_last" aria-current="page">
-                   Услуги
-                </span>
-              </span>
-            </span>
-          </p>
+        <?php
+			    if ( function_exists('yoast_breadcrumb') ) {
+				    yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );  
+			    }
+			  ?> 
 
-          <h1 class="services__title title">Услуги нашей компании</h1>
+          <h1 class="services__title title"><? the_title();?></h1>
 
           <div class="services__wrap">
             
