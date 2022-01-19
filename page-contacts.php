@@ -10,7 +10,7 @@ get_header(); ?>
 <?php get_template_part('template-parts/header-section');?>
 
 <main class="page">
-  <section class="content">
+  <section class="content page-recurring">
   <div class="_container">
 
   <?php
@@ -19,7 +19,7 @@ get_header(); ?>
 			}
 			?> 
 
-	<h1><? the_title();?></h1> 
+	<h1 class="services__title title"><? the_title();?></h1> 
 
   <ul> 
 	  <? $org = carbon_get_theme_option("as_company"); if (!empty($org)){?><li>Организация: <strong><? echo $org; ?></strong></li><?}?> 
