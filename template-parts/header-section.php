@@ -2,31 +2,29 @@
 
       <div class="header__navigation">
         <div class="header__navigation-container _container">
-          <a href="index.html" class="logo-icon header__logo">
-            <!-- <? bloginfo("url"); ?> -->
-          </a>
+          <a href="<? bloginfo("url"); ?>" class="logo-icon header__logo"></a>
 
-          <p class="header__address">г. Курск, ул.1-я Пушкарная, д. 28</p>
+          <? $adr = carbon_get_theme_option("as_address"); if (!empty($adr)){?><p class="header__address"><? echo $adr; ?></p><?}?>
 
-          <a href="mailto:ros-trud@mail.ru" class="header__mail">ros-trud@mail.ru</a> 
+          <? $mail = carbon_get_theme_option("as_email");
+			      if (!empty($mail)) { ?><a href="mailto:<? echo $mail; ?>" class="header__mail"><? echo $mail; ?></a><? } ?>
 
           <div class="header__soc-block">
             <div class="header__soc-block-icon soc-block-icon">
-              <a href="#" class="soc-block-icon__link soc-block-icon__link_1"></a>
-              <a href="#" class="soc-block-icon__link soc-block-icon__link_2"></a>
-              <a href="#" class="soc-block-icon__link soc-block-icon__link_3"></a>
-              <a href="#" class="soc-block-icon__link soc-block-icon__link_4"></a>
+              <a href="<?php echo carbon_get_theme_option('as_insta'); ?>" class="soc-block-icon__link soc-block-icon__link_1"></a>
+	            <a href="<?php echo carbon_get_theme_option('as_vk'); ?>" class="soc-block-icon__link soc-block-icon__link_2"></a>
+	            <a href="<?php echo carbon_get_theme_option('as_telegr'); ?>" class="soc-block-icon__link soc-block-icon__link_3"></a>
+	            <a href="<?php echo carbon_get_theme_option('as_whatsapp'); ?>" class="soc-block-icon__link soc-block-icon__link_4"></a>
             </div>
             <p class="header__soc-block-text">МЫ В СОЦСЕТЯХ</p>
           </div>
 
-          <div class="header__contacts d-flex">
-            <a href="tel:+74712550286" class="header__phone">+7 (4712) 55-02-86</a>
-            <!-- <a href="tel:<? echo preg_replace('/[^0-9]/', '', $tel); ?>"><? echo $tel = carbon_get_theme_option("as_phone_1"); ?></a> -->
+          <div class="header__contacts d-flex"> 
+          <? $tel = carbon_get_theme_option("as_phones_1"); 
+				    if (!empty($tel)){?><a href="tel:<? echo preg_replace('/[^0-9]/', '', $tel); ?>" class="header__phone"><? echo $tel; ?></a><?}?> 
             <a href="#callback" class="header__callback btn _popup-link">ЗАКАЗКАТЬ ЗВОНОК</a>
           </div>
-          <a href="tel:+74712550286" class="mob-phone-icon header__mob-phone-icon"></a>
-          <!-- <a href="tel:<? echo preg_replace('/[^0-9]/', '', $tel); ?>" class="mob-callback__phone"></a> -->
+          <a href="tel:<? echo preg_replace('/[^0-9]/', '', $tel); ?>" class="mob-phone-icon header__mob-phone-icon"></a>
 
           <div class="icon-menu" aria-label="Бургер меню">
             <span></span>
