@@ -47,16 +47,16 @@ add_action('after_setup_theme', function () {
 
 // function change_menu_item_css_classes($classes, $item, $args, $depth)
 // {
-// 	if ($item->ID  && 'menu_cat' === $args->theme_location) {
-// 		$classes[] = 'footer-top-wrap-list-item-sublist-item';
-// 	}
+// 	// if ($item->ID  && 'menu_cat' === $args->theme_location) {
+// 	// 	$classes[] = 'footer-top-wrap-list-item-sublist-item';
+// 	// }
 
-// 	if ($item->ID  && 'menu_company' === $args->theme_location) {
-// 		$classes[] = 'footer-top-wrap-list-item-sublist-item';
-// 	}
+// 	// if ($item->ID  && 'menu_company' === $args->theme_location) {
+// 	// 	$classes[] = 'footer-top-wrap-list-item-sublist-item';
+// 	// }
 
 // 	if ($item->ID  && 'menu_main' === $args->theme_location) {
-// 		$classes[] = 'header-bottom-wrap-menu-item';
+// 		$classes[] = 'footer__menu-item';
 // 	}
 
 // 	return $classes;
