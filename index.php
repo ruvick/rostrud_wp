@@ -8,19 +8,26 @@
 
 		<div class="slider-bg-wrap">  
 			<div class="slider-bg _swiper">
-				<div class="slider-bg__slide slider__slide slider-main__slide">
+			<?
+			$pict = carbon_get_theme_option('slider_index');
+			if ($pict) {
+				$pictIndex = 0;
+				foreach ($pict as $item) {
+					?>
+				<div class="slider-bg__slide slider__slide slider-main__slide" style="background-image: url(<?php echo wp_get_attachment_image_src($item['slider_img'], 'full')[0]; ?>);">
 					<div class="nuar_blk"></div>
 					<div class="slider-bg__container _container"> 
-						<h1 class="slider-bg__title">
-							УСЛУГИ ПО АУТСОРСИНГУ <br>
-							ОХРАНЫ ТРУДА
-						</h1>
-						<p class="slider-bg__subtitle">
-							Услуга, которая позволит Вам сократить расходы <br>
-							на содержание в штате специалиста по охране труда
-						</p>
+					<? if (!empty($item['slider_title'])) { ?>
+							<h1 class="slider-bg__title"><? echo $item['slider_title']; ?></h1>
+							<p class="slider-bg__subtitle"><? echo $item['slider_subtitle']; ?></p>
+						<? } ?>
 					</div>
 				</div>
+					<?
+					$pictIndex++;
+				}
+			}
+			?> 
 			</div>
 			<div class="slider-bg__swiper-button-block swiper-button-block"> 
 				<div class="_container">

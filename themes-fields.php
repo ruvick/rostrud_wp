@@ -20,7 +20,22 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
       Field::make('text', 'about_home_title', 'Заголовок на главной'),
       Field::make('rich_text', 'about_home', 'О нашей компании')
     ))
-    ->add_tab('Акции', array(
+    ->add_tab('Слайдер', array(
+      Field::make('complex', 'slider_index', 'Слайдер на главной')
+        ->add_fields(array(
+          Field::make('image', 'slider_img', 'Картинка слайдера')
+            ->set_width(50),
+          Field::make('text', 'slider_title', 'Заголовок слайдера')
+            ->set_width(50),
+          Field::make('text', 'slider_subtitle', 'Подзаголовок слайдера')
+            ->set_width(50),
+          // Field::make('text', 'slider_link', 'Ссылка в кнопке')
+          //   ->set_width(50),
+          // Field::make('text', 'slider_link_text', 'Текст в кнопке')
+          //   ->set_width(50),
+        ))
+    ))
+    ->add_tab('Акции', array( 
       Field::make('complex', 'complex_promo', 'Верхние блоки на главной')
       // ->set_max(3) // Можно будет выбрать только 5 постов
       ->add_fields(array(
