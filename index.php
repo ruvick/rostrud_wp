@@ -265,74 +265,37 @@
 												<h2 class="news__title title">Новости</h2>
 
 												<div class="news__wrap">
+												<?php 
+													$posts = get_posts( array(
+														'numberposts' => 3,
+														'category'    => 3,
+														'orderby'     => 'date',
+														// 'orderby'     => '612,616,626',
+														'order'       => 'DESC',
+														// 'include'     => '612,608,606',
+														'include'     => array(),
+														'exclude'     => array(),
+														'meta_key'    => '',
+														'meta_value'  =>'',
+														'post_type'   => 'post',
+														'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+														) );
 
-													<div class="news__column">
-														<div class="card-news">
-															<div class="card-news__img">
-																<picture><source srcset="<?php echo get_template_directory_uri();?>/img/news/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/news/01.jpg?_v=1639488964893" alt=""></picture>
-																</div>
-																<div class="card-news__descp">
-																	<p class="card-news__descp-date">24.11.2021</p>
-																	<h4 class="card-news__descp-title">
-																		Система сохранения жизни и 
-																		здоровья работников в процессе 
-																		трудовой деятельности
-																	</h4>
-																	<p class="card-news__descp-subtitle">
-																		Охрана труда по своей сути представляет набор 
-																		обязательных для исполнения работодателями 
-																		мероприятий, таких как обучение по охране...
-																	</p>
-																</div>
-															</div>
-														</div>
-														<div class="news__column">
-															<div class="card-news">
-																<div class="card-news__img">
-																	<picture><source srcset="<?php echo get_template_directory_uri();?>/img/news/02.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/news/02.jpg?_v=1639488964893" alt=""></picture>
-																	</div>
-																	<div class="card-news__descp">
-																		<p class="card-news__descp-date">24.11.2021</p>
-																		<h4 class="card-news__descp-title">
-																			Профилактическая медицина, 
-																			изучающая условия и характер труда
-																		</h4>
-																		<p class="card-news__descp-subtitle">
-																			Занимается вопросами обеспечения безопасности 
-																			производственного процесса, продукции, сырья и 
-																			поэтому не может служить интересам сохране...
-																		</p>
-																	</div>
-																</div>
-															</div>
-															<div class="news__column">
-																<div class="card-news">
-																	<div class="card-news__img">
-																		<picture><source srcset="<?php echo get_template_directory_uri();?>/img/news/03.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/news/03.jpg?_v=1639488964893" alt=""></picture>
-																		</div>
-																		<div class="card-news__descp">
-																			<p class="card-news__descp-date">24.11.2021</p>
-																			<h4 class="card-news__descp-title">
-																				Работник имеет права и гарантии 
-																				права на безопасные и здоровые 
-																				условия труда
-																			</h4>
-																			<p class="card-news__descp-subtitle">
-																				Федеральная инспекция труда контролирует 
-																				выполнение законодательства, всех норм и 
-																				правил по охране труда. Государственный сани...
-																			</p>
-																		</div>
-																	</div>
-																</div>
+													$result = wp_get_recent_posts( $args );
 
-															</div>
+													foreach( $posts as $post ){
+												?>
+												<?php get_template_part('template-parts/product-news');?>	
+												<?php 
+													} 
+												?>
+												</div>
 
-														</div>
-													</section>
+											</div>
+										</section>
 
-    										<?php get_template_part('template-parts/reviews-section');?>
+    						<?php get_template_part('template-parts/reviews-section');?>
 
-											</main>
+							</main>
 
-										<?php get_footer(); ?> 
+		<?php get_footer(); ?> 
