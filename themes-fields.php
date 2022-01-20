@@ -39,14 +39,30 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
       Field::make('complex', 'complex_licenses', 'Лицензии и аккредитации на главной')
       // ->set_max(3) // Можно будет выбрать только 5 постов
       ->add_fields(array(
-        Field::make('image', 'img_promo', 'Фото')
+        Field::make('image', 'img_licenses', 'Фото')
         ->set_width(30),
-        Field::make('text', 'text_promo', 'Текст')   
+        // Field::make('text', 'text_promo', 'Текст')   
+        // ->set_width(30),
+        ))
+    ))
+    ->add_tab('Клиенты и партнеры', array( 
+      Field::make('complex', 'complex_clients', 'Клиенты и партнеры на главной')
+      // ->set_max(3) // Можно будет выбрать только 5 постов
+      ->add_fields(array(
+        Field::make('image', 'img_clients', 'Фото')
         ->set_width(30),
-        Field::make('text', 'sticker_promo', 'Стикер')   
+        // Field::make('text', 'text_promo', 'Текст')   
+        // ->set_width(30),
+        ))
+    ))
+    ->add_tab('Отзывы клиентов', array( 
+      Field::make('complex', 'complex_reviews', 'Отзывы клиентов на главной')
+      // ->set_max(3) // Можно будет выбрать только 5 постов
+      ->add_fields(array(
+        Field::make('image', 'img_reviews', 'Фото')
         ->set_width(30),
-        Field::make('text', 'link_promo', 'Ссылка')   
-        ->set_width(30),
+        // Field::make('text', 'text_promo', 'Текст')   
+        // ->set_width(30),
         ))
     ))
     ->add_tab('Контакты', array(

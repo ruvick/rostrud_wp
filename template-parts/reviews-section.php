@@ -10,25 +10,20 @@
     </div>
 
     <div class="reviews-sl slider _swiper">
-      <div class="reviews-sl__slider-slide slider-slide">
-        <picture><source srcset="<?php echo get_template_directory_uri();?>/img/reviews/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/reviews/01.jpg?_v=1639488964893" alt=""></picture>
-      </div>
-      <div class="reviews-sl__slider-slide slider-slide">
-        <picture><source srcset="<?php echo get_template_directory_uri();?>/img/reviews/02.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/reviews/02.jpg?_v=1639488964893" alt=""></picture>
-      </div>
-      <div class="reviews-sl__slider-slide slider-slide">
-        <picture><source srcset="<?php echo get_template_directory_uri();?>/img/reviews/03.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/reviews/03.jpg?_v=1639488964893" alt=""></picture>
-      </div>
-      <div class="reviews-sl__slider-slide slider-slide">
-        <picture><source srcset="<?php echo get_template_directory_uri();?>/img/reviews/04.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/reviews/04.jpg?_v=1639488964893" alt=""></picture>
-      </div>
-      <div class="reviews-sl__slider-slide slider-slide">
-        <picture><source srcset="<?php echo get_template_directory_uri();?>/img/reviews/05.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/reviews/05.jpg?_v=1639488964893" alt=""></picture>
-      </div>
-      <div class="reviews-sl__slider-slide slider-slide">
-        <picture><source srcset="<?php echo get_template_directory_uri();?>/img/reviews/06.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/reviews/06.jpg?_v=1639488964893" alt=""></picture>
-      </div>
-    </div>
+    <? 
+			$reviews = carbon_get_theme_option('complex_reviews');
 
+				if ($reviews) {
+					$reviewsIndex = 0;
+				foreach ($reviews as $item) {
+		?>
+      <div class="reviews-sl__slider-slide slider-slide">
+        <img src="<?php echo wp_get_attachment_image_src($item['img_reviews'], 'large')[0]; ?>" alt="">				
+      </div>
+		<?
+			$reviewsIndex++; 
+					}
+				}
+		?>
   </div>
 </section>

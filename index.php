@@ -210,25 +210,23 @@
 			</div>
 
 			<div class="licenses-sl slider _swiper">
-				<div class="licenses-sl__slider-slide slider-slide">
-					<picture><source srcset="<?php echo get_template_directory_uri();?>/img/licenses/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/licenses/01.jpg?_v=1639488964893" alt=""></picture>
-					</div>
-					<div class="licenses-sl__slider-slide slider-slide">
-						<picture><source srcset="<?php echo get_template_directory_uri();?>/img/licenses/02.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/licenses/02.jpg?_v=1639488964893" alt=""></picture>
-						</div>
-						<div class="licenses-sl__slider-slide slider-slide">
-							<picture><source srcset="<?php echo get_template_directory_uri();?>/img/licenses/03.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/licenses/03.jpg?_v=1639488964893" alt=""></picture>
-							</div>
-							<div class="licenses-sl__slider-slide slider-slide">
-								<picture><source srcset="<?php echo get_template_directory_uri();?>/img/licenses/04.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/licenses/04.jpg?_v=1639488964893" alt=""></picture>
-								</div>
-								<div class="licenses-sl__slider-slide slider-slide">
-									<picture><source srcset="<?php echo get_template_directory_uri();?>/img/licenses/05.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/licenses/05.jpg?_v=1639488964893" alt=""></picture>
-									</div>
-								</div>
+				<? 
+					$licenses = carbon_get_theme_option('complex_licenses');
 
-							</div>
-						</section>
+					if ($licenses) {
+						$licensesIndex = 0;
+					foreach ($licenses as $item) {
+			?>
+				<div class="licenses-sl__slider-slide slider-slide">
+					<img src="<?php echo wp_get_attachment_image_src($item['img_licenses'], 'large')[0]; ?>" alt="">				
+				</div>
+			<?
+				$licensesIndex++; 
+					}
+				}
+			?>
+		</div>
+	</section>
 
 						<section id="clients" class="clients">
 							<div class="_container">
@@ -242,30 +240,25 @@
 								</div>
 
 								<div class="clients-sl slider _swiper">
-									<div class="clients-sl__slider-slide slider-slide">
-										<div class="clients-sl__img">
-											<picture><source srcset="<?php echo get_template_directory_uri();?>/img/clients/01.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/clients/01.jpg?_v=1639488964893" alt=""></picture>
-											</div>
-										</div>
+									<? 
+										$clients = carbon_get_theme_option('complex_clients');
+
+										if ($clients) {
+											$clientsIndex = 0;
+										foreach ($clients as $item) {
+									?>
 										<div class="clients-sl__slider-slide slider-slide">
 											<div class="clients-sl__img">
-												<picture><source srcset="<?php echo get_template_directory_uri();?>/img/clients/02.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/clients/02.jpg?_v=1639488964893" alt=""></picture>
-												</div>
+												<img src="<?php echo wp_get_attachment_image_src($item['img_clients'], 'large')[0]; ?>" alt="">				
 											</div>
-											<div class="clients-sl__slider-slide slider-slide">
-												<div class="clients-sl__img">
-													<picture><source srcset="<?php echo get_template_directory_uri();?>/img/clients/03.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/clients/03.jpg?_v=1639488964893" alt=""></picture>
-													</div>
-												</div>
-												<div class="clients-sl__slider-slide slider-slide">
-													<div class="clients-sl__img">
-														<picture><source srcset="<?php echo get_template_directory_uri();?>/img/clients/04.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/clients/04.jpg?_v=1639488964893" alt=""></picture>
-														</div>
-													</div>
-												</div>
-
-											</div>
-										</section>
+										</div>
+									<?
+										$clientsIndex++; 
+											}
+										}
+									?>
+							</div>
+						</section>
 
 										<section id="news" class="news">
 											<div class="_container">
