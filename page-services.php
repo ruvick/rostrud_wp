@@ -35,7 +35,7 @@ get_header(); ?>
 	          while ($page_children->have_posts()) : $page_children->the_post();
 		      ?>
             <div class="services__column">
-              <a href="<?php the_permalink(); ?>" class="card-bg" style="background-image: url(<?php the_post_thumbnail_url();?>)">
+              <a href="<?php the_permalink(); ?>" class="card-bg" style="background-image: url(<?php the_post_thumbnail_url('full');?>)">
                 <div class="card-bg__nuar_blk nuar_blk"></div>
                 <h4 class="card-bg__title"><?php the_title(); ?></h4>
               </a>
