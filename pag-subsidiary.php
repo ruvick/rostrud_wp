@@ -1,7 +1,7 @@
 <?php 
 
 /*
-Template Name: Страница Охрана труда
+Template Name: Страница Дочерняя услуги
 Template Post Type: page
 */
 
@@ -14,26 +14,13 @@ get_header(); ?>
       <section id="security" class="security page-recurring">
         <div class="_container">
 
-          <p id="breadcrumbs"> 
-            <span>
-              <span>
-                <a href="index.html">
-                  Главная
-                </a> /
-                <a href="services.html">
-                  Услуги
-                </a> /
-                <a href="#">
-                  Охрана труда 
-                </a> /
-                <span class="breadcrumb_last" aria-current="page">
-                 Аутсорсинг охраны труда
-               </span>
-             </span>
-           </span>
-         </p>
+        <?php
+			    if ( function_exists('yoast_breadcrumb') ) {
+				    yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );  
+			    }
+			  ?> 
 
-         <h1 class="security__title title">Аутсорсинг по охране труда</h1>
+         <h1 class="security__title title"><? the_title();?></h1>
 
          <div class="security__wrap d-flex">
 

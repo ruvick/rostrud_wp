@@ -35,8 +35,8 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
           //   ->set_width(50),
         ))
     ))
-    ->add_tab('Акции', array( 
-      Field::make('complex', 'complex_promo', 'Верхние блоки на главной')
+    ->add_tab('Лицензии и аккредитации', array( 
+      Field::make('complex', 'complex_licenses', 'Лицензии и аккредитации на главной')
       // ->set_max(3) // Можно будет выбрать только 5 постов
       ->add_fields(array(
         Field::make('image', 'img_promo', 'Фото')

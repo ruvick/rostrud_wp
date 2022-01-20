@@ -23,49 +23,28 @@ get_header(); ?>
           <h1 class="services__title title"><? the_title();?></h1>
 
           <div class="services__wrap">
-            
+          <?php
+            $page_children = new WP_Query(
+	            array(
+		            'post_type' => 'page',
+		            'post_parent' => '18',
+		            'order'       => 'ASC',
+	              )
+              );
+            if ($page_children->have_posts()) :
+	          while ($page_children->have_posts()) : $page_children->the_post();
+		      ?>
             <div class="services__column">
-              <div class="card-bg services__card-bg-1">
+              <a href="<?php the_permalink(); ?>" class="card-bg" style="background-image: url(<?php the_post_thumbnail_url();?>)">
                 <div class="card-bg__nuar_blk nuar_blk"></div>
-                <h4 class="card-bg__title">Услуги в сфере охраны труда</h4>
-              </div>
+                <h4 class="card-bg__title"><?php the_title(); ?></h4>
+              </a>
             </div>
-
-            <div class="services__column">
-              <div class="card-bg services__card-bg-2">
-                <div class="card-bg__nuar_blk nuar_blk"></div>
-                <h4 class="card-bg__title">Пожарная безопасность</h4>
-              </div>
-            </div>
-
-            <div class="services__column">
-              <div class="card-bg services__card-bg-3">
-                <div class="card-bg__nuar_blk nuar_blk"></div>
-                <h4 class="card-bg__title">Электробезопасность</h4>
-              </div>
-            </div>
-
-            <div class="services__column">
-              <div class="card-bg services__card-bg-4">
-                <div class="card-bg__nuar_blk nuar_blk"></div>
-                <h4 class="card-bg__title">Промышленная безопасность</h4>
-              </div>
-            </div>
-
-            <div class="services__column">
-              <div class="card-bg services__card-bg-5">
-                <div class="card-bg__nuar_blk nuar_blk"></div>
-                <h4 class="card-bg__title">Гражданская оборона</h4>
-              </div>
-            </div>
-
-            <div class="services__column">
-              <div class="card-bg services__card-bg-6">
-                <div class="card-bg__nuar_blk nuar_blk"></div>
-                <h4 class="card-bg__title">Кадровое делопроизводство</h4>
-              </div>
-            </div>
-
+		      <?php
+	          endwhile;
+            endif;
+            wp_reset_query();
+          ?>
           </div>
 
         </div>
