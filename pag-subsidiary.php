@@ -25,8 +25,8 @@ get_header(); ?>
          <div class="security__wrap d-flex">
 
           <div class="security__column">
-            <div class="security__column-img">
-              <picture><source srcset="<?php echo get_template_directory_uri();?>/img/security.webp" type="image/webp"><img src="<?php echo get_template_directory_uri();?>/img/security.jpg?_v=1639488964893" alt=""></picture>
+            <div class="security__column-img"> 
+              <img src="<?php  $imgTm = get_the_post_thumbnail_url( get_the_ID(), "full" ); echo empty($imgTm)?get_bloginfo("template_url")."/img/no-photo.jpg":$imgTm; ?>" alt="<? the_title();?>"> 
             </div>
           </div>
 
