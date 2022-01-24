@@ -32,15 +32,9 @@ get_header(); ?>
 
           <div class="security__column">
             <div class="security__column-descp">
-              <p class="security__column-descp-text">
-                <span>Охрана труда</span> – кропотливая ежедневная работа, требующая определенной квалификации, а также полного погружения в процесс. 
-                Зачастую руководители небольших организаций или берут этот груз на себя, или вовсе пренебрегают этой работой – по причине 
-                недостаточного знания законодательства, недооценки финансовых последствий и рисков возможных происшествий, отсутствия времени 
-                и т.д. В более крупных организациях встает вопрос либо о зачислении в штат собственного специалиста по охране труда, либо о 
-                передаче функций охраны труда на аутсорсинг(полный или частичный). Как правило, после подсчета всех расходов 
-                (создание рабочего места, обучения, зарплаты, оплаты социального пакета, налогов и т.д.), компании приходят к выводу, 
-                что аутсорсинг охраны труда – это значительная экономия средств организации.
-              </p>
+              <div class="security__column-descp-text"> 
+                <?php the_content(); ?>
+              </div>
               <div class="security__consult-block">
                 <h4 class="security__consult-block-title">
                   Остались вопросы по услуге? <br> 
@@ -48,7 +42,7 @@ get_header(); ?>
                 </h4>
                 <div class="security__consult-block-btn d-flex">
                   <a href="#callback" class="security__consult-block-btn-link btn _popup-link">Заказать звонок</a>
-                  <a href="#callback" class="security__consult-block-btn-link btn _popup-link">Оставить заявку</a>
+                  <!-- <a href="#callback" class="security__consult-block-btn-link btn _popup-link">Оставить заявку</a> -->
                 </div>
               </div>
             </div>
@@ -71,7 +65,7 @@ get_header(); ?>
               </div>
               <div class="tariff-plans__card-btn">
                 <div class="tariff-plans__card-btn-line"></div>
-                <a href="#" class="tariff-plans__card-btn-link btn">Подробнее</a>
+                <a href="#callback" class="tariff-plans__card-btn-link btn _popup-link">Задать вопрос</a>
               </div>
             </div>
           </div>
@@ -87,7 +81,7 @@ get_header(); ?>
               </div>
               <div class="tariff-plans__card-btn">
                 <div class="tariff-plans__card-btn-line"></div>
-                <a href="#" class="tariff-plans__card-btn-link btn">Подробнее</a>
+                <a href="#callback" class="tariff-plans__card-btn-link btn _popup-link">Задать вопрос</a>
               </div>
             </div>
           </div>
@@ -103,7 +97,7 @@ get_header(); ?>
               </div>
               <div class="tariff-plans__card-btn">
                 <div class="tariff-plans__card-btn-line"></div>
-                <a href="#" class="tariff-plans__card-btn-link btn">Подробнее</a>
+                <a href="#callback" class="tariff-plans__card-btn-link btn _popup-link">Задать вопрос</a>
               </div>
             </div>
           </div>
@@ -119,7 +113,7 @@ get_header(); ?>
               </div>
               <div class="tariff-plans__card-btn">
                 <div class="tariff-plans__card-btn-line"></div>
-                <a href="#" class="tariff-plans__card-btn-link btn">Подробнее</a>
+                <a href="#callback" class="tariff-plans__card-btn-link btn _popup-link">Задать вопрос</a>
               </div>
             </div>
           </div>
