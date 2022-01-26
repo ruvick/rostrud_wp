@@ -109,25 +109,50 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
         Field::make('text', 'text_map', 'Текст метки карты')
           ->set_width(50),
     ) );
-    Container::make('post_meta', 'ultra_product_cr', 'Характеристики товара')
-    ->show_on_post_type(array( 'ultra'))
+
+  Container::make('post_meta', 'pag-subsidiary', 'Характеристики записи')
+  ->show_on_template(array('pag-subsidiary.php'))
       ->add_fields(array(   
-      Field::make('textarea', 'offer_smile_descr', 'Краткое описание')->set_width(100),
-      // Field::make('text', 'offer_name', 'Название товара')->set_width(30),
-      // Field::make('text', 'offer_label', 'Метка на товаре')->set_width(30),
-      Field::make('text', 'offer_weight', 'Вес')->set_width(50),
-      // Field::make('text', 'offer_allsearch', 'Все артикулы для поиска')->set_width(50),
-      // Field::make('text', 'offer_siries', 'Серия (для сопутствующих)')->set_width(30),
-      Field::make('text', 'offer_sticker', 'Стикер')->set_width(50), 
-      Field::make('text', 'offer_price', 'Цена')->set_width(50),
-      Field::make('text', 'offer_number', 'Колличество')->set_width(50),
-      Field::make('text', 'offer_sku', 'Артикул (Базовый)')->set_width(50),
-      // Field::make('text', 'offer_benefit', 'Выгода')->set_width(50),
-      Field::make('rich_text', 'prod_descrip', 'Описание товара')->set_width(100),
-      Field::make('text', 'offer_calories', 'Калории')->set_width(50),
-      Field::make('text', 'offer_protein', 'Белки')->set_width(50),
-      Field::make('text', 'offer_fats', 'Жиры')->set_width(50),
-      Field::make('text', 'offer_carbohyd', 'Углеводы')->set_width(50),
+      Field::make( 'complex', 'tariff_complex', "Тарифные планы" )
+        // ->set_max(2) // Можно будет выбрать только 2 поста
+        ->add_fields( array(
+          Field::make('text', 'tariff_complex_name', 'Тарифный план')->set_width(30),
+          Field::make('text', 'tariff_complex_price', 'Стоимость')->set_width(30),
+          Field::make('text', 'tariff_complex_descp', 'Описание тарифного плана')->set_width(50)      
+      ) ),
+      // Field::make( 'complex', 'galery_works', "Галерея наших работ" )
+      // ->add_fields( array(
+      //   Field::make('image', 'galery_works_img', 'Изображение' )->set_width(30),
+      //   Field::make('text', 'galery_works_img_sku', 'ID для модификации')->set_width(30),
+      //   Field::make('text', 'galery_works_img_alt', 'alt и title')->set_width(30)        
+      // ) ),
+      // Field::make( 'complex', 'galery_fabrics', "Галерея тканей" )
+      // ->add_fields( array(
+      //   Field::make('image', 'galery_fabrics_img', 'Изображение' )->set_width(30),
+      //   Field::make('text', 'galery_fabrics_img_alt', 'alt и title')->set_width(30)        
+      // ) ),
+
+  ));
+
+    // Container::make('post_meta', 'ultra_product_cr', 'Характеристики товара')
+    // ->show_on_post_type(array( 'ultra'))
+    //   ->add_fields(array(   
+    //   Field::make('textarea', 'offer_smile_descr', 'Краткое описание')->set_width(100),
+    //   // Field::make('text', 'offer_name', 'Название товара')->set_width(30),
+    //   // Field::make('text', 'offer_label', 'Метка на товаре')->set_width(30),
+    //   Field::make('text', 'offer_weight', 'Вес')->set_width(50),
+    //   // Field::make('text', 'offer_allsearch', 'Все артикулы для поиска')->set_width(50),
+    //   // Field::make('text', 'offer_siries', 'Серия (для сопутствующих)')->set_width(30),
+    //   Field::make('text', 'offer_sticker', 'Стикер')->set_width(50), 
+    //   Field::make('text', 'offer_price', 'Цена')->set_width(50),
+    //   Field::make('text', 'offer_number', 'Колличество')->set_width(50),
+    //   Field::make('text', 'offer_sku', 'Артикул (Базовый)')->set_width(50),
+    //   // Field::make('text', 'offer_benefit', 'Выгода')->set_width(50),
+    //   Field::make('rich_text', 'prod_descrip', 'Описание товара')->set_width(100),
+    //   Field::make('text', 'offer_calories', 'Калории')->set_width(50),
+    //   Field::make('text', 'offer_protein', 'Белки')->set_width(50),
+    //   Field::make('text', 'offer_fats', 'Жиры')->set_width(50),
+    //   Field::make('text', 'offer_carbohyd', 'Углеводы')->set_width(50),
 
       // Field::make( 'complex', 'offer_cherecter', "Характеристики товара табы, левая колонка" )
       // ->add_fields( array(
@@ -152,12 +177,12 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
       //   Field::make('text', 'mod_picture_id', 'Изображения модификации')->set_width(20),
       // ) ),
         
-      Field::make( 'complex', 'offer_picture', "Галерея товара" )
-      ->add_fields( array(
-        Field::make('image', 'gal_img', 'Изображение' )->set_width(30),
-        Field::make('text', 'gal_img_sku', 'ID для модификации')->set_width(30),
-        Field::make('text', 'gal_img_alt', 'alt и title')->set_width(30)        
-      ) ),
+      // Field::make( 'complex', 'offer_picture', "Галерея товара" )
+      // ->add_fields( array(
+      //   Field::make('image', 'gal_img', 'Изображение' )->set_width(30),
+      //   Field::make('text', 'gal_img_sku', 'ID для модификации')->set_width(30),
+      //   Field::make('text', 'gal_img_alt', 'alt и title')->set_width(30)        
+      // ) ),
 
     //   Field::make('complex', 'complex_analogs', 'Ближайшие аналоги')
     //     ->set_max(4) // Можно будет выбрать только 5 постов
@@ -170,7 +195,7 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
     //       ->set_width(33),
     // ))
 
-  ));
+  // ));
 
   // Container::make('post_meta', 'single-galery', 'Характеристики записи')
   // ->show_on_template(array('single-galery.php'))

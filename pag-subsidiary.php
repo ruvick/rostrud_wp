@@ -50,18 +50,23 @@ get_header(); ?>
 
         </div>
 
-        <h2 class="security__title title">Тарифные планы</h2>
-
-        <div class="tariff-plans__wrap">
-
+        <? $tarif = carbon_get_post_meta(get_the_ID(),"tariff_complex");	
+	        if (!empty($tarif)) { 
+        ?>
+          <h2 class="security__title title">Тарифные планы</h2> 
+          <div class="tariff-plans__wrap">
+        <?
+          $tarifIndex = 0;
+		        foreach ($tarif as $item) {
+        ?>
           <div class="tariff-plans__column">
             <div class="tariff-plans__card">
               <div class="tariff-plans__card-header">
-                <h4 class="tariff-plans__card-header-title">Офис</h4>
+                <h4 class="tariff-plans__card-header-title"><? echo $item['tariff_complex_name']; ?></h4>
               </div>
               <div class="tariff-plans__card-descp">
-                <p class="tariff-plans__card-descp-price">от <span>10 000</span> ₽/мес.</p>
-                <p class="tariff-plans__card-descp-text">Только офисные работники (служащие) численностью до 50 без рабочих и линейных ИТР</p>
+                <p class="tariff-plans__card-descp-price">от <span><? echo $item['tariff_complex_price']; ?></span> ₽/мес.</p>
+                <p class="tariff-plans__card-descp-text"><? echo $item['tariff_complex_descp']; ?></p>
               </div>
               <div class="tariff-plans__card-btn">
                 <div class="tariff-plans__card-btn-line"></div>
@@ -69,57 +74,13 @@ get_header(); ?>
               </div>
             </div>
           </div>
-
-          <div class="tariff-plans__column">
-            <div class="tariff-plans__card">
-              <div class="tariff-plans__card-header">
-                <h4 class="tariff-plans__card-header-title">Офис +</h4>
-              </div>
-              <div class="tariff-plans__card-descp">
-                <p class="tariff-plans__card-descp-price">от <span>14 000</span> ₽/мес.</p>
-                <p class="tariff-plans__card-descp-text">В основе офисные работники, обслуживающие офис работники, линейные ИТР общей численностью до 50</p>
-              </div>
-              <div class="tariff-plans__card-btn">
-                <div class="tariff-plans__card-btn-line"></div>
-                <a href="#callback" class="tariff-plans__card-btn-link btn _popup-link">Задать вопрос</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="tariff-plans__column">
-            <div class="tariff-plans__card">
-              <div class="tariff-plans__card-header">
-                <h4 class="tariff-plans__card-header-title">Малое <br> предприятие 50</h4>
-              </div>
-              <div class="tariff-plans__card-descp">
-                <p class="tariff-plans__card-descp-price">от <span>18 000</span> ₽/мес.</p>
-                <p class="tariff-plans__card-descp-text">Малые предприятия и организации разных отраслей с общей численностью работников до 50</p>
-              </div>
-              <div class="tariff-plans__card-btn">
-                <div class="tariff-plans__card-btn-line"></div>
-                <a href="#callback" class="tariff-plans__card-btn-link btn _popup-link">Задать вопрос</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="tariff-plans__column">
-            <div class="tariff-plans__card">
-              <div class="tariff-plans__card-header">
-                <h4 class="tariff-plans__card-header-title">Малое <br> предприятие 100</h4>
-              </div>
-              <div class="tariff-plans__card-descp">
-                <p class="tariff-plans__card-descp-price">от <span>22 000</span> ₽/мес.</p>
-                <p class="tariff-plans__card-descp-text">Малые предприятия и организации разных отраслей с общей численностью работников от 50 до 100</p>
-              </div>
-              <div class="tariff-plans__card-btn">
-                <div class="tariff-plans__card-btn-line"></div>
-                <a href="#callback" class="tariff-plans__card-btn-link btn _popup-link">Задать вопрос</a>
-              </div>
-            </div>
-          </div>
-
+			  <?
+			    $tarifIndex++; 
+		        }
+	        }
+	      ?>
         </div>
-
+	      
         <h2 class="security__title title">Наша компания ООО «Рос.Труд» предлагает перевести Вашу компанию на Аутсорсинг по охране труда, что позволит:</h2>
         <div class="security__descp">
           <ul class="security__descp-list">
