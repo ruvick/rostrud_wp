@@ -82,39 +82,24 @@ get_header(); ?>
         <?
 	        }
 	      ?>
+
+        <? 
+		      $listDescp = carbon_get_post_meta(get_the_ID(),"list_descp_complex"); 
+	          if ($listDescp) {
+		      $listDescpIndex = 0;
+		        foreach ($listDescp as $item) {
+			  ?>
+          <h2 class="security__title title"><? echo $item['list_descp_complex_title']; ?></h2>
+          <div class="security__descp">
+            <? echo $item['list_descp_complex_left']; ?>
+            <? echo $item['list_descp_complex_right']; ?>
+          </div>
+			  <?
+			    $listDescpIndex++; 
+		        }
+	        }
+	      ?>
 	      
-        <h2 class="security__title title">Наша компания ООО «Рос.Труд» предлагает перевести Вашу компанию на Аутсорсинг по охране труда, что позволит:</h2>
-        <div class="security__descp">
-          <ul class="security__descp-list">
-            <li class="security__descp-list-item">оптимизировать расходы;</li>
-            <li class="security__descp-list-item">сконцентрироваться на основных видах деятельности;</li>
-            <li class="security__descp-list-item">использовать передовой опыт в области охраны труда;</li>
-          </ul>
-          <ul class="security__descp-list">
-            <li class="security__descp-list-item">получить гарантию качества выполняемых работ;</li>
-            <li class="security__descp-list-item">снизить риски ответственности работодателя от нежелательных событий (аварий, несчастных случаев, инцидентов) до уровня приемлемых;</li>
-          </ul>
-        </div>
-
-        <h2 class="security__title title">Аутсорсинг охраны труда в организации включает:</h2>
-        <div class="security__descp">
-          <ul class="security__descp-list">
-            <li class="security__descp-list-item security__descp-list-item_dots">Разработку документации по охране труда и ведение нормативно-правовой базы по охране труда;</li>
-            <li class="security__descp-list-item security__descp-list-item_dots">Документооборот по охране труда. Ведение документооборота, управление записями, ведение журналов;</li>
-            <li class="security__descp-list-item security__descp-list-item_dots">Контроль и аудит. Оперативный контроль, оценка остаточных рисков заказчика в области охраны труда, корректирующие действия по результатам;</li>
-            <li class="security__descp-list-item security__descp-list-item_dots">Консультирование по вопросам охраны труда;</li>
-            <li class="security__descp-list-item security__descp-list-item_dots">Участие в работе комиссии по расследованию несчастных случаев, связанных с производством;</li>
-            <li class="security__descp-list-item security__descp-list-item_dots">Работа с инспектирующими организациями. Взаимодействие и представление интересов компании при проведении проверок инспектирующих организаций, работа по предписаниям;</li>
-          </ul>
-          <ul class="security__descp-list">
-            <li class="security__descp-list-item security__descp-list-item_dots">Взаимодействие с Фондом Социального Страхования (ФСС). Помощь в формировании пакета документов для возмещения до 20% от отчислений за прошедший год;</li>
-            <li class="security__descp-list-item security__descp-list-item_dots">Организация Обучения сотрудников по охране труда, мерам пожарной безопасности (пож. минимум), электробезопасности и.т.д;</li>
-            <li class="security__descp-list-item security__descp-list-item_dots">Организация проведения инструктажей по охране труда;</li>
-            <li class="security__descp-list-item security__descp-list-item_dots">Организация проведения Профессиональных медицинских осмотров;</li>
-            <li class="security__descp-list-item security__descp-list-item_dots">Организация проведения Специальной оценки условий труда.</li>
-          </ul>
-        </div>
-
         <div class="subsidiary-descp">
           <?echo carbon_get_post_meta(get_the_ID(),"subsid_descp"); ?>
         </div>

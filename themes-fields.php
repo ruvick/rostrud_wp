@@ -122,9 +122,9 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
       ) ),
       Field::make( 'complex', 'list_descp_complex', "Списки с описанием" )
       ->add_fields( array(
-        Field::make('text', 'list_descp_complex_title', 'Заголовок списка')->set_width(30),
-        Field::make('text', 'list_descp_complex_left', 'Список слева')->set_width(50),       
-        Field::make('text', 'list_descp_complex_right', 'Список справа')->set_width(50)     
+        Field::make('text', 'list_descp_complex_title', 'Заголовок списка')->set_width(100),
+        Field::make('rich_text', 'list_descp_complex_left', 'Список слева')->set_width(50),       
+        Field::make('rich_text', 'list_descp_complex_right', 'Список справа')->set_width(50)     
       ) ),
       Field::make('rich_text', 'subsid_descp', 'Описание')->set_width(100)
 
