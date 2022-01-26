@@ -112,6 +112,11 @@ get_header(); ?>
             <li class="security__descp-list-item security__descp-list-item_dots">Организация проведения Специальной оценки условий труда.</li>
           </ul>
         </div>
+
+        <div class="subsidiary-descp">
+          <?echo carbon_get_post_meta(get_the_ID(),"subsid_descp"); ?>
+        </div>
+
         <p class="security__notification">Оказание вышеуказанных услуг осуществляется на основании Уведомления о внесении в реестр аккредитованных организаций, оказывающих услуги в области охраны труда за №3020 аккредитации в Минтруде России (письмо от 23.08.2013 № 15-2-2341).</p>
 
       </div>

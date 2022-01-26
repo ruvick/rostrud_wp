@@ -4540,9 +4540,24 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
 /* Карта End */
 
 
+.subsidiary-descp {
+  margin: 0 0 25px 0;
+}
 
+.subsidiary-descp h1,
+.subsidiary-descp h2,
+.subsidiary-descp h3,
+.subsidiary-descp h4,
+.subsidiary-descp h5,
+.subsidiary-descp h6 {
+  margin: 20px 0;
+}
 
-
+.subsidiary-descp p {
+  font-size: 20px;
+  line-height: 30px;
+  margin: 10px 0;
+}
 
 
 
