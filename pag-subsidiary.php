@@ -76,10 +76,12 @@ get_header(); ?>
           </div>
 			  <?
 			    $tarifIndex++; 
-		        }
+		      }
+        ?>
+          </div>
+        <?
 	        }
 	      ?>
-        </div>
 	      
         <h2 class="security__title title">Наша компания ООО «Рос.Труд» предлагает перевести Вашу компанию на Аутсорсинг по охране труда, что позволит:</h2>
         <div class="security__descp">
