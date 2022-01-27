@@ -4073,6 +4073,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .reviews-sl__slider-slide {
   height: auto;
+  border: 10px solid #f1ddbb;
 }
 
 .clients {
@@ -4590,6 +4591,15 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><fi
   max-height: 315px;
   overflow: hidden;
 }
+
+.clients-sl {
+  padding: 0 5px;
+}
+
+
+
+
+
 
 
 
