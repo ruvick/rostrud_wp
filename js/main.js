@@ -65,61 +65,61 @@ function email_test(input) {
 //BildSlider
 let sliders = document.querySelectorAll('._swiper');
 if (sliders) {
-  for (let index = 0; index < sliders.length; index++) {
-    let slider = sliders[index];
-    if (!slider.classList.contains('swiper-bild')) {
-      let slider_items = slider.children;
-      if (slider_items) {
-        for (let index = 0; index < slider_items.length; index++) {
-          let el = slider_items[index];
-          el.classList.add('swiper-slide');
-        }
-      }
-      let slider_content = slider.innerHTML;
-      let slider_wrapper = document.createElement('div');
-      slider_wrapper.classList.add('swiper-wrapper');
-      slider_wrapper.innerHTML = slider_content;
-      slider.innerHTML = '';
-      slider.appendChild(slider_wrapper);
-      slider.classList.add('swiper-bild');
+	for (let index = 0; index < sliders.length; index++) {
+		let slider = sliders[index];
+		if (!slider.classList.contains('swiper-bild')) {
+			let slider_items = slider.children;
+			if (slider_items) {
+				for (let index = 0; index < slider_items.length; index++) {
+					let el = slider_items[index];
+					el.classList.add('swiper-slide');
+				}
+			}
+			let slider_content = slider.innerHTML;
+			let slider_wrapper = document.createElement('div');
+			slider_wrapper.classList.add('swiper-wrapper');
+			slider_wrapper.innerHTML = slider_content;
+			slider.innerHTML = '';
+			slider.appendChild(slider_wrapper);
+			slider.classList.add('swiper-bild');
 
-      if (slider.classList.contains('_swiper_scroll')) {
-        let sliderScroll = document.createElement('div');
-        sliderScroll.classList.add('swiper-scrollbar');
-        slider.appendChild(sliderScroll);
-      }
-    }
-    if (slider.classList.contains('_gallery')) {
-      //slider.data('lightGallery').destroy(true);
-    }
-  }
-  sliders_bild_callback();
+			if (slider.classList.contains('_swiper_scroll')) {
+				let sliderScroll = document.createElement('div');
+				sliderScroll.classList.add('swiper-scrollbar');
+				slider.appendChild(sliderScroll);
+			}
+		}
+		if (slider.classList.contains('_gallery')) {
+			//slider.data('lightGallery').destroy(true);
+		}
+	}
+	sliders_bild_callback();
 }
 
 function sliders_bild_callback(params) { }
 
 let sliderScrollItems = document.querySelectorAll('._swiper_scroll');
 if (sliderScrollItems.length > 0) {
-  for (let index = 0; index < sliderScrollItems.length; index++) {
-    const sliderScrollItem = sliderScrollItems[index];
-    const sliderScrollBar = sliderScrollItem.querySelector('.swiper-scrollbar');
-    const sliderScroll = new Swiper(sliderScrollItem, {
-      observer: true,
-      observeParents: true,
-      direction: 'vertical',
-      slidesPerView: 'auto',
-      freeMode: true,
-      scrollbar: {
-        el: sliderScrollBar,
-        draggable: true,
-        snapOnRelease: false
-      },
-      mousewheel: {
-        releaseOnEdges: true,
-      },
-    });
-    sliderScroll.scrollbar.updateSize();
-  }
+	for (let index = 0; index < sliderScrollItems.length; index++) {
+		const sliderScrollItem = sliderScrollItems[index];
+		const sliderScrollBar = sliderScrollItem.querySelector('.swiper-scrollbar');
+		const sliderScroll = new Swiper(sliderScrollItem, {
+			observer: true,
+			observeParents: true,
+			direction: 'vertical',
+			slidesPerView: 'auto',
+			freeMode: true,
+			scrollbar: {
+				el: sliderScrollBar,
+				draggable: true,
+				snapOnRelease: false
+			},
+			mousewheel: {
+				releaseOnEdges: true,
+			},
+		});
+		sliderScroll.scrollbar.updateSize();
+	}
 }
 
 
@@ -127,265 +127,265 @@ function sliders_bild_callback(params) { }
 
 // Сюда пишем класс нашего слайдера и меняем переменную
 let sliderBg = new Swiper('.slider-bg', {
-  // effect: 'fade',
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
+	// effect: 'fade',
+	autoplay: {
+		delay: 3000,
+		disableOnInteraction: false,
+	},
 
-  observer: true,
-  observeParents: true,
-  slidesPerView: 1,
-  spaceBetween: 0,
-  // autoHeight: true,
-  speed: 2000,
-  //touchRatio: 0,
-  //simulateTouch: false,
-  loop: true,
-  //preloadImages: false,
-  //lazy: true,
-  // Dotts
-  //pagination: {
-  //	el: '.slider-quality__pagging',
-  //	clickable: true,
-  //},
-  // Arrows
-  navigation: {
-    nextEl: '.slider-main-next',
-    prevEl: '.slider-main-prev',
-  },
-  /*
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 0,
-      autoHeight: true,
-    },
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    992: {
-      slidesPerView: 3,
-      spaceBetween: 20,
-    },
-    1268: {
-      slidesPerView: 4,
-      spaceBetween: 30,
-    },
-  },
-  */
-  on: {
-    lazyImageReady: function () {
-      ibg();
-    },
-  }
-  // And if we need scrollbar
-  //scrollbar: {
-  //	el: '.swiper-scrollbar',
-  //},
+	observer: true,
+	observeParents: true,
+	slidesPerView: 1,
+	spaceBetween: 0,
+	// autoHeight: true,
+	speed: 2000,
+	//touchRatio: 0,
+	//simulateTouch: false,
+	loop: true,
+	//preloadImages: false,
+	//lazy: true,
+	// Dotts
+	//pagination: {
+	//	el: '.slider-quality__pagging',
+	//	clickable: true,
+	//},
+	// Arrows
+	navigation: {
+		nextEl: '.slider-main-next',
+		prevEl: '.slider-main-prev',
+	},
+	/*
+	breakpoints: {
+		320: {
+			slidesPerView: 1,
+			spaceBetween: 0,
+			autoHeight: true,
+		},
+		768: {
+			slidesPerView: 2,
+			spaceBetween: 20,
+		},
+		992: {
+			slidesPerView: 3,
+			spaceBetween: 20,
+		},
+		1268: {
+			slidesPerView: 4,
+			spaceBetween: 30,
+		},
+	},
+	*/
+	on: {
+		lazyImageReady: function () {
+			ibg();
+		},
+	}
+	// And if we need scrollbar
+	//scrollbar: {
+	//	el: '.swiper-scrollbar',
+	//},
 });
 
 // function sliders_bild_callback(params) { }
 
 // Сюда пишем класс нашего слайдера и меняем переменную
 let licenses_sl = new Swiper('.licenses-sl', {
-  // effect: 'fade',
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false,
-  // },
+	// effect: 'fade',
+	// autoplay: {
+	//   delay: 3000,
+	//   disableOnInteraction: false,
+	// },
 
-  observer: true,
-  observeParents: true,
-  slidesPerView: 1.8,
-  spaceBetween: 15,
-  // autoHeight: true,
-  speed: 2000,
-  //touchRatio: 0,
-  //simulateTouch: false,
-  loop: true,
-  //preloadImages: false,
-  //lazy: true,
-  // Dotts
-  //pagination: {
-  //  el: '.slider-quality__pagging',
-  //  clickable: true,
-  //},
-  // Arrows
-  navigation: {
-    nextEl: '.licenses-sl-next',
-    prevEl: '.licenses-sl-prev',
-  },
-  
-  breakpoints: {
-    360: {
-      slidesPerView: 2.5,
-      spaceBetween: 10,
-    },
-    540: {
-      slidesPerView: 3.5,
-      spaceBetween: 15,
-    },
-    768: {
-      slidesPerView: 3.8,
-    },
-    1024: {
-      slidesPerView: 5,
-      spaceBetween: 10,
-    },
-    1100: {
-      spaceBetween: 20,
-    },
-    1280: {
-      slidesPerView: 5,
-      spaceBetween: 23,
-    },
-  },
-  
-  on: {
-    lazyImageReady: function () {
-      ibg();
-    },
-  }
-  // And if we need scrollbar
-  //scrollbar: {
-  //  el: '.swiper-scrollbar',
-  //},
+	observer: true,
+	observeParents: true,
+	slidesPerView: 1.8,
+	spaceBetween: 15,
+	// autoHeight: true,
+	speed: 2000,
+	//touchRatio: 0,
+	//simulateTouch: false,
+	loop: true,
+	//preloadImages: false,
+	//lazy: true,
+	// Dotts
+	//pagination: {
+	//  el: '.slider-quality__pagging',
+	//  clickable: true,
+	//},
+	// Arrows
+	navigation: {
+		nextEl: '.licenses-sl-next',
+		prevEl: '.licenses-sl-prev',
+	},
+
+	breakpoints: {
+		360: {
+			slidesPerView: 2.5,
+			spaceBetween: 10,
+		},
+		540: {
+			slidesPerView: 3.5,
+			spaceBetween: 15,
+		},
+		768: {
+			slidesPerView: 3.8,
+		},
+		1024: {
+			slidesPerView: 5,
+			spaceBetween: 10,
+		},
+		1100: {
+			spaceBetween: 20,
+		},
+		1280: {
+			slidesPerView: 5,
+			spaceBetween: 23,
+		},
+	},
+
+	on: {
+		lazyImageReady: function () {
+			ibg();
+		},
+	}
+	// And if we need scrollbar
+	//scrollbar: {
+	//  el: '.swiper-scrollbar',
+	//},
 });
 
 // function sliders_bild_callback(params) { }
 
 // Сюда пишем класс нашего слайдера и меняем переменную
 let reviews_sl = new Swiper('.reviews-sl', {
-  // effect: 'fade',
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false,
-  // },
+	// effect: 'fade',
+	// autoplay: {
+	//   delay: 3000,
+	//   disableOnInteraction: false,
+	// },
 
-  observer: true,
-  observeParents: true,
-  slidesPerView: 1.8,
-  spaceBetween: 15,
-  // autoHeight: true,
-  speed: 2000,
-  //touchRatio: 0,
-  //simulateTouch: false,
-  loop: true,
-  //preloadImages: false,
-  //lazy: true,
-  // Dotts
-  //pagination: {
-  //  el: '.slider-quality__pagging',
-  //  clickable: true,
-  //},
-  // Arrows
-  navigation: {
-    nextEl: '.reviews-sl-next',
-    prevEl: '.reviews-sl-prev',
-  },
-  
-  breakpoints: {
-    360: {
-      slidesPerView: 2.5,
-      spaceBetween: 10,
-    },
-    540: {
-      slidesPerView: 3.5,
-      spaceBetween: 15,
-    },
-    768: {
-      slidesPerView: 3.8,
-    },
-    1024: {
-      slidesPerView: 5,
-      spaceBetween: 10,
-    },
-    1100: {
-      spaceBetween: 20,
-    },
-    1280: {
-      slidesPerView: 6,
-      spaceBetween: 23,
-    },
-  },
-  
-  on: {
-    lazyImageReady: function () {
-      ibg();
-    },
-  }
-  // And if we need scrollbar
-  //scrollbar: {
-  //  el: '.swiper-scrollbar',
-  //},
+	observer: true,
+	observeParents: true,
+	slidesPerView: 1.8,
+	spaceBetween: 15,
+	// autoHeight: true,
+	speed: 2000,
+	//touchRatio: 0,
+	//simulateTouch: false,
+	loop: true,
+	//preloadImages: false,
+	//lazy: true,
+	// Dotts
+	//pagination: {
+	//  el: '.slider-quality__pagging',
+	//  clickable: true,
+	//},
+	// Arrows
+	navigation: {
+		nextEl: '.reviews-sl-next',
+		prevEl: '.reviews-sl-prev',
+	},
+
+	breakpoints: {
+		360: {
+			slidesPerView: 2.5,
+			spaceBetween: 10,
+		},
+		540: {
+			slidesPerView: 3.5,
+			spaceBetween: 15,
+		},
+		768: {
+			slidesPerView: 3.8,
+		},
+		1024: {
+			slidesPerView: 5,
+			spaceBetween: 10,
+		},
+		1100: {
+			spaceBetween: 20,
+		},
+		1280: {
+			slidesPerView: 6,
+			spaceBetween: 23,
+		},
+	},
+
+	on: {
+		lazyImageReady: function () {
+			ibg();
+		},
+	}
+	// And if we need scrollbar
+	//scrollbar: {
+	//  el: '.swiper-scrollbar',
+	//},
 });
 
 // function sliders_bild_callback(params) { }
 
 // Сюда пишем класс нашего слайдера и меняем переменную
 let clients_sl = new Swiper('.clients-sl', {
-  // effect: 'fade',
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false,
-  // },
+	// effect: 'fade',
+	// autoplay: {
+	//   delay: 3000,
+	//   disableOnInteraction: false,
+	// },
 
-  observer: true,
-  observeParents: true,
-  slidesPerView: 1.1,
-  spaceBetween: 10,
-  // autoHeight: true,
-  speed: 2000,
-  //touchRatio: 0,
-  //simulateTouch: false,
-  loop: true,
-  //preloadImages: false,
-  //lazy: true,
-  // Dotts
-  //pagination: {
-  //  el: '.slider-quality__pagging',
-  //  clickable: true,
-  //},
-  // Arrows
-  navigation: {
-    nextEl: '.clients-sl-next',
-    prevEl: '.clients-sl-prev',
-  },
-  
-  breakpoints: {
-    360: {
-      slidesPerView: 1.8,
-    },
-    540: {
-      slidesPerView: 2.2,
-    },
-    768: {
-      slidesPerView: 2.5,
-    },
-    812: {
-      slidesPerView: 2.8,
-    },
-    1024: {
-      slidesPerView: 3.5,
-      spaceBetween: 20,
-    },
-    1280: {
-      slidesPerView: 4,
-      spaceBetween: 30,
-    },
-  },
-  
-  on: {
-    lazyImageReady: function () {
-      ibg();
-    },
-  }
-  // And if we need scrollbar
-  //scrollbar: {
-  //  el: '.swiper-scrollbar',
-  //},
+	observer: true,
+	observeParents: true,
+	slidesPerView: 1.1,
+	spaceBetween: 10,
+	// autoHeight: true,
+	speed: 2000,
+	//touchRatio: 0,
+	//simulateTouch: false,
+	loop: true,
+	//preloadImages: false,
+	//lazy: true,
+	// Dotts
+	//pagination: {
+	//  el: '.slider-quality__pagging',
+	//  clickable: true,
+	//},
+	// Arrows
+	navigation: {
+		nextEl: '.clients-sl-next',
+		prevEl: '.clients-sl-prev',
+	},
+
+	breakpoints: {
+		360: {
+			slidesPerView: 1.8,
+		},
+		540: {
+			slidesPerView: 2.2,
+		},
+		768: {
+			slidesPerView: 2.5,
+		},
+		812: {
+			slidesPerView: 2.8,
+		},
+		1024: {
+			slidesPerView: 3.5,
+			spaceBetween: 20,
+		},
+		1280: {
+			slidesPerView: 4,
+			spaceBetween: 30,
+		},
+	},
+
+	on: {
+		lazyImageReady: function () {
+			ibg();
+		},
+	}
+	// And if we need scrollbar
+	//scrollbar: {
+	//  el: '.swiper-scrollbar',
+	//},
 });
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
@@ -1208,55 +1208,55 @@ const headsearch = document.querySelector(".header__search-mob");
 
 //BURGER
 if (iconMenu) {
-  iconMenu.addEventListener("click", function () {
-    iconMenu.classList.toggle("active");
-    body.classList.toggle("_lock");
-    menuBody.classList.toggle("active");
-  });
+	iconMenu.addEventListener("click", function () {
+		iconMenu.classList.toggle("active");
+		body.classList.toggle("_lock");
+		menuBody.classList.toggle("active");
+	});
 }
 
 // Закрытие моб меню при клике на якорную ссылку
 if (menuListItemElems) {
-  menuListItemElems.addEventListener("click", function () {
-    iconMenu.classList.toggle("active");
-    body.classList.toggle("_lock");
-    menuBody.classList.toggle("active");
-  });
+	menuListItemElems.addEventListener("click", function () {
+		iconMenu.classList.toggle("active");
+		body.classList.toggle("_lock");
+		menuBody.classList.toggle("active");
+	});
 }
 
 // Строка поиска на мобилках 
 if (mobsearch) {
-  mobsearch.addEventListener("click", function () {
-    headsearch.classList.toggle("_active");
-  });
+	mobsearch.addEventListener("click", function () {
+		headsearch.classList.toggle("_active");
+	});
 }
 
 // Закрытие моб меню при клике вне области меню 
 window.addEventListener('click', e => { // при клике в любом месте окна браузера
-  const target = e.target // находим элемент, на котором был клик
-  if (!target.closest('.icon-menu') && !target.closest('.mob-menu') && !target.closest('.header__mob-search-btn') && !target.closest('.header__search-mob') && !target.closest('._popup-link') && !target.closest('.popup')) { // если этот элемент или его родительские элементы не окно навигации и не кнопка
-    iconMenu.classList.remove('active') // то закрываем окно навигации, удаляя активный класс
-    menuBody.classList.remove('active')
-    body.classList.remove('_lock')
-    headsearch.classList.remove('_active')
-  }
+	const target = e.target // находим элемент, на котором был клик
+	if (!target.closest('.icon-menu') && !target.closest('.mob-menu') && !target.closest('.header__mob-search-btn') && !target.closest('.header__search-mob') && !target.closest('._popup-link') && !target.closest('.popup')) { // если этот элемент или его родительские элементы не окно навигации и не кнопка
+		iconMenu.classList.remove('active') // то закрываем окно навигации, удаляя активный класс
+		menuBody.classList.remove('active')
+		body.classList.remove('_lock')
+		headsearch.classList.remove('_active')
+	}
 })
 
 // Плавная прокрутка
 const smotScrollElems = document.querySelectorAll('a[href^="#"]:not(a[href="#"])');
 
 smotScrollElems.forEach(link => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault()
-    console.log(event);
+	link.addEventListener('click', (event) => {
+		event.preventDefault()
+		console.log(event);
 
-    const id = link.getAttribute('href').substring(1)
-    console.log('id : ', id);
+		const id = link.getAttribute('href').substring(1)
+		console.log('id : ', id);
 
-    document.getElementById(id).scrollIntoView({
-      behavior: 'smooth'
-    });
-  })
+		document.getElementById(id).scrollIntoView({
+			behavior: 'smooth'
+		});
+	})
 });
 
 
@@ -1265,8 +1265,8 @@ const scrollProgress = document.getElementById('scroll-progress');
 const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
 window.addEventListener('scroll', () => {
-  const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-  scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
+	const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+	scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
 });
 
 
@@ -1274,14 +1274,14 @@ window.addEventListener('scroll', () => {
 const priceEl = document.querySelector(".price");
 
 function changePrice(price) {
-  priceEl.innerText = price;
-  console.log(price);
+	priceEl.innerText = price;
+	console.log(price);
 };
 
 
 // Подсказки
 tippy('._tippy', {
-  content: "Подсказка",
+	content: "Подсказка",
 });
 
 
@@ -1291,29 +1291,29 @@ const BarLinkIconElems = document.querySelectorAll('.sidebar__menu-icon');
 const BarSubMenuElems = document.querySelectorAll('.sidebar__submenu');
 
 BarIconElems.forEach((btn, index) => {
-  btn.addEventListener('click', () => {
+	btn.addEventListener('click', () => {
 
-    if (!btn.classList.contains('sidebar__menu-icon_active')) {
+		if (!btn.classList.contains('sidebar__menu-icon_active')) {
 
-      BarSubMenuElems.forEach((BarSubMenuElem) => {
-        BarSubMenuElem.classList.remove('active')
-      });
-      BarIconElems.forEach((BarIconElem) => {
-        BarIconElem.classList.remove('sidebar__menu-icon_active')
-      });
-      BarLinkIconElems.forEach((BarLinkIconElem) => {
-        BarLinkIconElem.classList.remove('sidebar__menu-icon_active')
-      });
+			BarSubMenuElems.forEach((BarSubMenuElem) => {
+				BarSubMenuElem.classList.remove('active')
+			});
+			BarIconElems.forEach((BarIconElem) => {
+				BarIconElem.classList.remove('sidebar__menu-icon_active')
+			});
+			BarLinkIconElems.forEach((BarLinkIconElem) => {
+				BarLinkIconElem.classList.remove('sidebar__menu-icon_active')
+			});
 
-      BarSubMenuElems[index].classList.add('active')
-      BarLinkIconElems[index].classList.add('sidebar__menu-icon_active')
-      btn.classList.add('sidebar__menu-icon_active')
-    } else {
-      BarSubMenuElems[index].classList.remove('active')
-      BarLinkIconElems[index].classList.remove('sidebar__menu-icon_active')
-      btn.classList.remove('sidebar__menu-icon_active')
-    }
-  })
+			BarSubMenuElems[index].classList.add('active')
+			BarLinkIconElems[index].classList.add('sidebar__menu-icon_active')
+			btn.classList.add('sidebar__menu-icon_active')
+		} else {
+			BarSubMenuElems[index].classList.remove('active')
+			BarLinkIconElems[index].classList.remove('sidebar__menu-icon_active')
+			btn.classList.remove('sidebar__menu-icon_active')
+		}
+	})
 })
 
 
@@ -2426,4 +2426,6 @@ function scroll_animate(event) {
 // Файлы jQuery---------------------------------------------------------------------------------------------------------------
 
 $ = jQuery;
+
+$('figure img').parent('a').attr("data-lightbox", 'gallery');
 

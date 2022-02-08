@@ -30,12 +30,12 @@ get_header(); ?>
 					      foreach ($licenses as $item) {
 			      ?>
               <div class="licenses__column">
-                <div class="licenses__img">
+                <a href="<?php echo wp_get_attachment_image_src($item['img_licenses'], 'large')[0]; ?>" class="licenses__img" data-lightbox="gallery">
                   <img src="<?php echo wp_get_attachment_image_src($item['img_licenses'], 'large')[0]; ?>" alt="">
-                </div>
+                </a>
               </div>
 			      <?
-				      $licensesIndex++; 
+				      $licensesIndex++;  
 					      }
 				      }
 			      ?>
@@ -44,7 +44,31 @@ get_header(); ?>
         </div>
       </section>
 
-    <?php get_template_part('template-parts/reviews-section');?>
+      <section id="reviews" class="reviews">
+        <div class="_container">
+
+        <h2 class="services__title title">Отзывы клиентов</h2>
+
+        <div class="licenses__wrap">
+          <? 
+            $reviews = carbon_get_theme_option('complex_reviews');
+              if ($reviews) {
+            $reviewsIndex = 0;
+              foreach ($reviews as $item) {
+          ?>
+            <div class="licenses__column">
+              <a href="<?php echo wp_get_attachment_image_src($item['img_reviews'], 'large')[0]; ?>" class="licenses__img" data-lightbox="gallery">
+                <img src="<?php echo wp_get_attachment_image_src($item['img_reviews'], 'large')[0]; ?>" alt="">
+              </a>
+            </div>
+          <?
+            $reviewsIndex++;  
+              }
+            }
+          ?>
+        </div>
+      </div>
+    </section>
 
     </main>
 
