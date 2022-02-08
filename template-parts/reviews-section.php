@@ -17,9 +17,9 @@
 					$reviewsIndex = 0;
 				foreach ($reviews as $item) {
 		?>
-      <div class="reviews-sl__slider-slide slider-slide">
+      <a href="<?php echo wp_get_attachment_image_src($item['img_reviews'], 'large')[0]; ?>" data-lightbox="gallery" class="reviews-sl__slider-slide slider-slide">
         <img src="<?php echo wp_get_attachment_image_src($item['img_reviews'], 'large')[0]; ?>" alt="">				
-      </div>
+      </a>
 		<?
 			$reviewsIndex++; 
 					}

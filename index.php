@@ -209,9 +209,9 @@
 						$licensesIndex = 0;
 					foreach ($licenses as $item) {
 			?>
-				<div class="licenses-sl__slider-slide slider-slide">
+				<a href="<?php echo wp_get_attachment_image_src($item['img_licenses'], 'large')[0]; ?>" data-lightbox="gallery" class="licenses-sl__slider-slide slider-slide">
 					<img src="<?php echo wp_get_attachment_image_src($item['img_licenses'], 'large')[0]; ?>" alt="">				
-				</div>
+				</a>
 			<?
 				$licensesIndex++; 
 					}
