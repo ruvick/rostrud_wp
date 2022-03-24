@@ -204,7 +204,7 @@ let licenses_sl = new Swiper('.licenses-sl', {
 	speed: 2000,
 	//touchRatio: 0,
 	//simulateTouch: false,
-	loop: true,
+	loop: false,
 	//preloadImages: false,
 	//lazy: true,
 	// Dotts
