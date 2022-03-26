@@ -11,8 +11,7 @@
 
           <div class="header__soc-block">
             <div class="header__soc-block-icon soc-block-icon">
-              <a href="<?php echo carbon_get_theme_option('as_insta'); ?>" class="soc-block-icon__link soc-block-icon__link_1"></a>
-	            <a href="<?php echo carbon_get_theme_option('as_vk'); ?>" class="soc-block-icon__link soc-block-icon__link_2"></a>
+              <a href="<?php echo carbon_get_theme_option('as_vk'); ?>" class="soc-block-icon__link soc-block-icon__link_2"></a>
 	            <a href="<?php echo carbon_get_theme_option('as_telegr'); ?>" class="soc-block-icon__link soc-block-icon__link_3"></a>
 	            <a href="<?php echo carbon_get_theme_option('as_whatsapp'); ?>" class="soc-block-icon__link soc-block-icon__link_4"></a>
             </div>
