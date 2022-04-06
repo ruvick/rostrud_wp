@@ -65,7 +65,7 @@ get_header(); ?>
                 <h4 class="tariff-plans__card-header-title"><? echo $item['tariff_complex_name']; ?></h4>
               </div>
               <div class="tariff-plans__card-descp">
-                <p class="tariff-plans__card-descp-price">от <span><? echo $item['tariff_complex_price']; ?></span> ₽/мес.</p>
+                <p class="tariff-plans__card-descp-price">от <span><? echo $item['tariff_complex_price']; ?></span> ₽/раб. место</p>
                 <p class="tariff-plans__card-descp-text"><? echo $item['tariff_complex_descp']; ?></p>
               </div>
               <div class="tariff-plans__card-btn">
