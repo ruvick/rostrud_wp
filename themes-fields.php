@@ -118,6 +118,7 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
         ->add_fields( array(
           Field::make('text', 'tariff_complex_name', 'Тарифный план')->set_width(30),
           Field::make('text', 'tariff_complex_price', 'Стоимость')->set_width(30),
+          Field::make('text', 'tariff_complex_price_param', 'Параметр стоимости')->set_width(30),
           Field::make('text', 'tariff_complex_descp', 'Описание тарифного плана')->set_width(50)      
       ) ),
       Field::make( 'complex', 'list_descp_complex', "Списки с описанием" )

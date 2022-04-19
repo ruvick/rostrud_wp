@@ -65,12 +65,12 @@ get_header(); ?>
                 <h4 class="tariff-plans__card-header-title"><? echo $item['tariff_complex_name']; ?></h4>
               </div>
               <div class="tariff-plans__card-descp">
-                <p class="tariff-plans__card-descp-price">от <span><? echo $item['tariff_complex_price']; ?></span> ₽/раб. место</p>
+                <p class="tariff-plans__card-descp-price">от <span><? echo $item['tariff_complex_price']; ?></span> ₽/<? echo $item['tariff_complex_price_param']; ?></p>
                 <p class="tariff-plans__card-descp-text"><? echo $item['tariff_complex_descp']; ?></p>
               </div>
               <div class="tariff-plans__card-btn">
                 <div class="tariff-plans__card-btn-line"></div>
-                <a href="#callback" class="tariff-plans__card-btn-link btn _popup-link">Задать вопрос</a>
+                <a href="#callback" class="tariff-plans__card-btn-link btn _popup-link">Задать вопрос</a> 
               </div>
             </div>
           </div>
