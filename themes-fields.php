@@ -127,8 +127,8 @@ Container::make( 'theme_options', __( 'Настройки темы', 'crb' ) )
         Field::make('rich_text', 'list_descp_complex_left', 'Список слева')->set_width(50),       
         Field::make('rich_text', 'list_descp_complex_right', 'Список справа')->set_width(50)     
       ) ),
+      Field::make('text', 'footnote_text', 'Текст сноска')->set_width(100),
       Field::make('rich_text', 'subsid_descp', 'Описание')->set_width(100)
-
   ));
 
     // Container::make('post_meta', 'ultra_product_cr', 'Характеристики товара')

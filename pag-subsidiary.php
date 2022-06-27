@@ -7,7 +7,7 @@ Template Post Type: page
 
 get_header(); ?>
 
-<?php get_template_part('template-parts/header-section');?>
+<?php get_template_part('template-parts/header-section');?> 
 
     <main class="page">
 
@@ -65,7 +65,7 @@ get_header(); ?>
                 <h4 class="tariff-plans__card-header-title"><? echo $item['tariff_complex_name']; ?></h4>
               </div>
               <div class="tariff-plans__card-descp">
-                <p class="tariff-plans__card-descp-price">от <span><? echo $item['tariff_complex_price']; ?></span> ₽/<? echo $item['tariff_complex_price_param']; ?></p>
+                <p class="tariff-plans__card-descp-price">от <span><? echo $item['tariff_complex_price']; ?></span> ₽ <? echo $item['tariff_complex_price_param']; ?></p>
                 <p class="tariff-plans__card-descp-text"><? echo $item['tariff_complex_descp']; ?></p>
               </div>
               <div class="tariff-plans__card-btn">
@@ -100,11 +100,17 @@ get_header(); ?>
 	        }
 	      ?>
 	      
-        <div class="subsidiary-descp">
-          <?echo carbon_get_post_meta(get_the_ID(),"subsid_descp"); ?>
-        </div>
-
-        <p class="security__notification">Оказание вышеуказанных услуг осуществляется на основании Уведомления о внесении в реестр аккредитованных организаций, оказывающих услуги в области охраны труда за №3020 аккредитации в Минтруде России (письмо от 23.08.2013 № 15-2-2341).</p>
+        <? $subsid = carbon_get_post_meta(get_the_ID(),"subsid_descp");
+	        if (!empty($subsid)) { ?>
+            <div class="subsidiary-descp">
+              <? echo $subsid; ?>
+            </div>
+        <? } ?>
+        
+        <? $footnote = carbon_get_post_meta(get_the_ID(),"footnote_text");
+	        if (!empty($footnote)) { ?>
+            <p class="security__notification"><? echo $footnote; ?></p>
+        <? } ?>
 
       </div>
     </section>
