@@ -11,24 +11,28 @@
 						<source srcset="<?php echo get_template_directory_uri(); ?>/img/popup.webp" type="image/webp"><img src="<?php echo get_template_directory_uri(); ?>/img/popup.jpg?_v=1632757662937" alt="">
 					</picture>
 				</div>
-				<div class="popup__form-block"> 
+				<div class="popup__form-block">   
 					<h2>Заказать звонок</h2> 
 					
 					<div class="headen_form_blk">
 						<p class="popup__notific">Оставьте заявку и мы свяжемся с Вами в течении 15 минут</p>
-						<form action="#" class="form universal_send_form">
+						<form id="callback_form" class="form">
 							
-							<div class="SendetMsg form_msg" style="display:none;">
+							<div class="SendetMsg" style="display:none">
 								Ваше сообщение успешно отправлено.
 							</div>
 
-							<div class="form__line">
-								<input id="name" autocomplete="off" type="text" name="name" data-error="Ошибка" data-value="Имя" class="popup__form-input input _req">
-								<input id="tel2" autocomplete="off" type="text" name="tel" data-error="Ошибка" data-value="Телефон" class="popup__form-input input _phone _req">
-							</div>
-							<p class="popup__policy">Заполняя данную форму вы соглашаетесь с <a href="#">политикой
+							<div class="form__line headen_form_blk">
+								<input type="hidden" name = "form_name" data-valuem = "Название формы" value = "Заказать звонок">
+								<input type="hidden" name = "page_lnk" data-valuem = "Адрес страницы" value = "<? echo (is_home())?"https://unicaprof.ru/":get_the_permalink()?>">
+								<input type="text" name="name" required data-valuem = "Имя*" placeholder="Имя*" class="popup__form-input input">
+								<input type="tel" name="tel" required data-valuem = "Телефон*" placeholder="Телефон*" class="popup__form-input input">
+
+								<p class="popup__policy">Заполняя данную форму вы соглашаетесь с <a href="#">политикой
 									конфиденциальности</a></p>
-							<button type = "button" class="popup__form-btn form__btn btn u_send">Заказать</button>
+								<button type="submit" class="popup__form-btn btn new_send_btn"
+	          			data-formid="callback_form">Заказать</button>
+							</div>
 						</form>
 					</div>
 				</div>
