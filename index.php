@@ -19,7 +19,7 @@
 					<div class="slider-bg__container _container"> 
 					<? if (!empty($item['slider_title'])) { ?>
 							<h1 class="slider-bg__title"><? echo $item['slider_title']; ?></h1>
-							<p class="slider-bg__subtitle"><? echo $item['slider_subtitle']; ?></p>
+							<p class="slider-bg__subtitle"><? echo apply_filters('the_content', $item['slider_subtitle']); ?></p>
 						<? } ?>
 					</div>
 				</div>
@@ -46,7 +46,7 @@
 				<p class="company__tagline"></p>
 				<h2 class="about__title"><?php echo carbon_get_theme_option('about_home_title'); ?></h2>
 				<div class="about__subtitle">
-					<p><? echo $abouttc; ?></p>
+					<p><? echo apply_filters('the_content', $abouttc); ?></p>
 				</div>
 			<? } ?>
 
