@@ -25,8 +25,9 @@
 							<div class="form__line headen_form_blk">
 								<input type="hidden" name = "form_name" data-valuem = "Название формы" value = "Заказать звонок">
 								<input type="hidden" name = "page_lnk" data-valuem = "Адрес страницы" value = "<? echo (is_home())?"https://unicaprof.ru/":get_the_permalink()?>">
-								<input type="text" name="name" required data-valuem = "Имя*" placeholder="Имя*" class="popup__form-input input">
-								<input type="tel" name="tel" required data-valuem = "Телефон*" placeholder="Телефон*" class="popup__form-input input">
+								<input type="text" name="name" required data-valuem = "Имя" placeholder="Имя*" class="popup__form-input input">
+								<input type="tel" name="tel" required data-valuem = "Телефон" placeholder="Телефон*" class="popup__form-input input">
+								<input type="email" name="email" required data-valuem = "Email" placeholder="Email*" class="popup__form-input input">
 
 								<p class="popup__policy">Заполняя данную форму вы соглашаетесь с <a href="#">политикой
 									конфиденциальности</a></p>
