@@ -3796,6 +3796,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   z-index: 500;
 }
 
+.slider-bg__container p {
+  line-height: 24px;
+  color: #fff;
+}
+
 .slider-bg__slide {
   position: relative;
   width: 100%;
