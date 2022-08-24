@@ -22,7 +22,10 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<h1 class="services__title title"><?php the_title();?></h1>
-					<?php the_content();?>
+					<div class = "text_styles">
+						<?php the_content();?>
+					</div>
+					
 					<?php endwhile;?>
 				<?php endif; ?> 
 

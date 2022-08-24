@@ -32,7 +32,7 @@ get_header(); ?>
 
           <div class="security__column">
             <div class="security__column-descp">
-              <div class="security__column-descp-text"> 
+              <div class="security__column-descp-text text_styles"> 
                 <?php the_content(); ?>
               </div>
               <div class="security__consult-block">
@@ -102,7 +102,7 @@ get_header(); ?>
 	      
         <? $subsid = carbon_get_post_meta(get_the_ID(),"subsid_descp");
 	        if (!empty($subsid)) { ?>
-            <div class="subsidiary-descp">
+            <div class="subsidiary-descp text_styles">
               <? echo $subsid; ?>
             </div>
         <? } ?>

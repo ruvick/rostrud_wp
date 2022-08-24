@@ -45,7 +45,7 @@
 				if (!empty($abouttc)) { ?>
 				<p class="company__tagline"></p>
 				<h2 class="about__title"><?php echo carbon_get_theme_option('about_home_title'); ?></h2>
-				<div class="about__subtitle">
+				<div class="about__subtitle text_styles">
 					<p><? echo apply_filters('the_content', $abouttc); ?></p>
 				</div>
 			<? } ?>

@@ -11,7 +11,7 @@
     "send_head": "scp -C header.php u1552013@31.31.196.105:www/unicaprof.ru/wp-content/themes/rostrud",
     "send_cat": "scp -C category.php u1552013@31.31.196.105:www/unicaprof.ru/wp-content/themes/rostrud",
     "send_singl": "scp -C single.php u1552013@31.31.196.105:www/unicaprof.ru/wp-content/themes/rostrud",
-    "send_one": "scp -C page.php u1552013@31.31.196.105:www/unicaprof.ru/wp-content/themes/rostrud",
+    "send_one": "scp -C pag-subsidiary.php u1552013@31.31.196.105:www/unicaprof.ru/wp-content/themes/rostrud",
     "send_index": "scp -C index.php u1552013@31.31.196.105:www/unicaprof.ru/wp-content/themes/rostrud",
     "send_func": "scp -C functions.php u1552013@31.31.196.105:www/unicaprof.ru/wp-content/themes/rostrud",
     "send_futt": "scp -C footer.php u1552013@31.31.196.105:www/unicaprof.ru/wp-content/themes/rostrud",
